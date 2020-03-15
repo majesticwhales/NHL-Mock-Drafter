@@ -4,23 +4,23 @@ class Team:
         self.name = name
         self.pos = pos
 
-draftorder = []
+standings = []
 
-draftorder.append( Team('Detroit Red Wings', 1))
-draftorder.append( Team('Ottawa Senators', 2))
-draftorder.append( Team('Ottawa Senators (from San Jose)', 3))
-draftorder.append( Team('Los Angeles Kings', 4))
-draftorder.append( Team('Anaheim Ducks', 5))
-draftorder.append( Team('New Jersey Devils', 6))
-draftorder.append( Team('Buffalo Sabres', 7))
-draftorder.append( Team('Montreal Canadiens', 8))
-draftorder.append( Team('Chicago Blackhawks', 9))
-draftorder.append( Team('New Jersey Devils (from Arizona)', 10))
-draftorder.append( Team('Minnesota Wild', 11))
-draftorder.append( Team('Winnipeg Jets', 12))
-draftorder.append( Team('New York Rangers', 13))
-draftorder.append( Team('Florida Panthers', 14))
-draftorder.append( Team('Columbus Blue Jackets', 15))
+standings.append( Team('Detroit Red Wings', 1))
+standings.append( Team('Ottawa Senators', 2))
+standings.append( Team('Ottawa Senators (from San Jose)', 3))
+standings.append( Team('Los Angeles Kings', 4))
+standings.append( Team('Anaheim Ducks', 5))
+standings.append( Team('New Jersey Devils', 6))
+standings.append( Team('Buffalo Sabres', 7))
+standings.append( Team('Montreal Canadiens', 8))
+standings.append( Team('Chicago Blackhawks', 9))
+standings.append( Team('New Jersey Devils (from Arizona)', 10))
+standings.append( Team('Minnesota Wild', 11))
+standings.append( Team('Winnipeg Jets', 12))
+standings.append( Team('New York Rangers', 13))
+standings.append( Team('Florida Panthers', 14))
+standings.append( Team('Columbus Blue Jackets', 15))
 
 winpos = 0
 r = random.randint(0, 999)
@@ -30,7 +30,7 @@ for i in range(1000):
         i == 975 or i == 990):
         winpos += 1    
     if (i == r):
-        firstplace = draftorder[winpos].name
+        firstplace = standings[winpos].name
         break
 
 winpos2 = 0
@@ -42,17 +42,45 @@ while (winpos2 == 0 or winpos2 == winpos):
             i == 669 or i == 737 or i == 800 or i == 853 or i == 891 or 
             i == 924 or i == 951 or i == 973 or i == 990):
             winpos2 += 1    
-    if (i == r2):
-        secondplace = draftorder[winpos2].name
-        break
+        if (i == r2):
+            secondplace = standings[winpos2].name
+            break
 
+winpos3 = 0
+while (winpos3 == 0 or winpos3 == winpos or winpos3 == winpos2):
+    winpos3 = 0
+    r3 = random.randint(0,999)
+    for i in range(1000):
+        if (i == 144 or i == 267 or i == 378 or i == 475 or i == 564 or
+            i == 644 or i == 715 or i == 782 or i == 839 or i == 880 or 
+            i == 916 or i == 946 or i == 970 or i == 988):
+            winpos3 += 1    
+        if (i == r3):
+            thirdplace = standings[winpos3].name
+            break
 
-print(firstplace)
-print(secondplace)
-print(r)
-print(r2)
-print(winpos)
-print(winpos2)
+    
+draftorder = []
+
+draftorder.append(Team(standings[winpos].name, 1))
+draftorder.append(Team(standings[winpos2].name, 2))
+draftorder.append(Team(standings[winpos3].name, 3))
+
+sel = 4
+
+for obj in standings:
+    if (obj.name != draftorder[0].name and
+        obj.name != draftorder[1].name and
+        obj.name != draftorder[2].name):
+        draftorder.append(Team(obj.name, sel))
+        sel += 1
+
+if (draftorder[0].name == 'New Jersey Devils (from Arizona)'):
+    draftorder[0].name = 'Arizona Coyotes'
+if (draftorder[1].name == 'New Jersey Devils (from Arizona)'):
+    draftorder[1].name = 'Arizona Coyotes'
+if (draftorder[2].name == 'New Jersey Devils (from Arizona)'):
+    draftorder[2].name = 'Arizona Coyotes'
 
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
