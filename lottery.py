@@ -4,6 +4,23 @@ class Team:
         self.name = name
         self.pos = pos
 
+class Prospect:
+    def __init__(self, name, posn, rank, pp, rp):
+        self.name = name
+        self.posn = posn
+        self.rank = rank
+        self.pp = pp
+        self.rp = rp
+
+class TeamNeed:
+    def __init__(self, c, lw, rw, lhd, rhd, g):
+        self.c = c
+        self.lw = lw
+        self.rw = rw
+        self.lhd = lhd
+        self.rhd = rhd
+        self.g = g
+
 standings = []
 
 standings.append( Team('Detroit Red Wings', 1))
