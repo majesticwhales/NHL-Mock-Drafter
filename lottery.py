@@ -34,7 +34,7 @@ for i in range(1000):
         break
 
 winpos2 = 0
-while (winp  os2 == 0 or winpos2 == winpos):
+while (winpos2 == 0 or winpos2 == winpos):
     winpos2 = 0
     r2 = random.randint(0,999)
     for i in range(1000):
@@ -42,7 +42,7 @@ while (winp  os2 == 0 or winpos2 == winpos):
             i == 669 or i == 737 or i == 800 or i == 853 or i == 891 or 
             i == 924 or i == 951 or i == 973 or i == 990):
             winpos2 += 1    
-    if (i == r):
+    if (i == r2):
         secondplace = draftorder[winpos2].name
         break
 
