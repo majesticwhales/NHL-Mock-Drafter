@@ -1,3 +1,4 @@
+import random
 class Team:
     def __init__(self, name, pos):
         self.name = name
@@ -21,11 +22,20 @@ draftorder.append( Team('New York Rangers', 13))
 draftorder.append( Team('Florida Panthers', 14))
 draftorder.append( Team('Columbus Blue Jackets', 15))
 
+winpos = 0
+r = random.randint(0, 999)
+for i in range(1000):
+    if (i == 185 | i == 320 | i == 435 | i == 530 | i == 615 | i == 690 |
+        i == 755 | i == 815 | i == 865 | i == 900 | i == 930 | i == 955 |
+        i == 975 | i == 990):
+        winpos += 1    
+    if (i == r):
+        firstplace = draftorder[winpos]
 
+print(firstplace)
 
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
 
-print("Test")
     
 
