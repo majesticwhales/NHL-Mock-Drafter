@@ -25,14 +25,17 @@ draftorder.append( Team('Columbus Blue Jackets', 15))
 winpos = 0
 r = random.randint(0, 999)
 for i in range(1000):
-    if (i == 185 | i == 320 | i == 435 | i == 530 | i == 615 | i == 690 |
-        i == 755 | i == 815 | i == 865 | i == 900 | i == 930 | i == 955 |
-        i == 975 | i == 990):
+    if (i == 185 or i == 320 or i == 435 or i == 530 or i == 615 or i == 690 or
+        i == 755 or i == 815 or i == 865 or i == 900 or i == 930 or i == 955 or
+        i == 975 or i == 990):
         winpos += 1    
     if (i == r):
-        firstplace = draftorder[winpos]
+        firstplace = draftorder[winpos].name
+        break
 
 print(firstplace)
+print(r)
+print(winpos)
 
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
