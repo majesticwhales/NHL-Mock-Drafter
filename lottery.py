@@ -21,7 +21,11 @@ draftorder.append( Team('New York Rangers', 13))
 draftorder.append( Team('Florida Panthers', 14))
 draftorder.append( Team('Columbus Blue Jackets', 15))
 
+
+
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
+
+print("Test")
     
 
