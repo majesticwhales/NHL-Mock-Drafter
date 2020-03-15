@@ -82,6 +82,24 @@ if (draftorder[1].name == 'New Jersey Devils (from Arizona)'):
 if (draftorder[2].name == 'New Jersey Devils (from Arizona)'):
     draftorder[2].name = 'Arizona Coyotes'
 
+draftorder.append(Team('Calgary Flames', 16))
+draftorder.append(Team('New Jersey Devils (from Vancouver)', 17))
+draftorder.append(Team('Nashville Predators', 18))
+draftorder.append(Team('Carolina Hurricanes (from Toronto)', 19))
+draftorder.append(Team('Edmonton Oilers', 20))
+draftorder.append(Team('Ottawa Seantors (from New York Islanders)', 21))
+draftorder.append(Team('Dallas Stars', 22))
+draftorder.append(Team('New York Rangers (from Carolina)', 23))
+draftorder.append(Team('Minnesota Wild (from Pittsburgh)', 24))
+draftorder.append(Team('Philadelphia Flyers', 25))
+draftorder.append(Team('San Jose Sharks (from Tampa Bay)', 26))
+draftorder.append(Team('Colorado Avalanche', 27))
+draftorder.append(Team('Vegas Golden Knights', 28))
+draftorder.append(Team('Washington Capitals', 29))
+draftorder.append(Team('St. Louis Blues', 30))
+draftorder.append(Team('Anaheim Ducks (from Boston)', 31))
+
+print("DRAFT ORDER:")
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
 
