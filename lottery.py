@@ -33,9 +33,26 @@ for i in range(1000):
         firstplace = draftorder[winpos].name
         break
 
+winpos2 = 0
+while (winp  os2 == 0 or winpos2 == winpos):
+    winpos2 = 0
+    r2 = random.randint(0,999)
+    for i in range(1000):
+        if (i == 165 or i == 295 or i == 408 or i == 504 or i == 591 or
+            i == 669 or i == 737 or i == 800 or i == 853 or i == 891 or 
+            i == 924 or i == 951 or i == 973 or i == 990):
+            winpos2 += 1    
+    if (i == r):
+        secondplace = draftorder[winpos2].name
+        break
+
+
 print(firstplace)
+print(secondplace)
 print(r)
+print(r2)
 print(winpos)
+print(winpos2)
 
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
