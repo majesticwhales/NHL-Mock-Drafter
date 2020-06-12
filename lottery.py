@@ -4,14 +4,6 @@ class Team:
         self.name = name
         self.pos = pos
 
-class Prospect:
-    def __init__(self, fname, lname, posn, rank, pp, rp):
-        self.name = name
-        self.posn = posn
-        self.rank = rank
-        self.pp = pp
-        self.rp = rp
-
 class TeamNeed:
     def __init__(self, c, lw, rw, lhd, rhd, g):
         self.c = c
@@ -118,8 +110,6 @@ draftorder.append(Team('Anaheim Ducks (from Boston)', 31))
 
 ranking = []
 
-myfile = open("prospects.txt", "r")
-myfile.close()
 
 print("DRAFT ORDER:")
 for obj in draftorder:
