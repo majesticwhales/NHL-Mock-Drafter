@@ -108,9 +108,6 @@ draftorder.append(Team('Washington Capitals', 29))
 draftorder.append(Team('St. Louis Blues', 30))
 draftorder.append(Team('Anaheim Ducks (from Boston)', 31))
 
-ranking = []
-
-
 print("DRAFT ORDER:")
 for obj in draftorder:
     print(obj.pos, obj.name, sep = ' ')
